@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class EF_PlayerController : MonoBehaviour
 {
-
     Rigidbody rbody;
     InputAction playAction;
     Vector2 mousePosition;
@@ -49,7 +48,7 @@ public class EF_PlayerController : MonoBehaviour
         {
             rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
             transform.position += (mainCamera.transform.forward * inputVector.y * objectSpeed * Time.fixedDeltaTime) + (mainCamera.transform.right * inputVector.x * objectSpeed * Time.fixedDeltaTime);
-            transform.position = new Vector3(transform.position.x, 1.0f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, 0.8f, transform.position.z);
         }
 
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.fixedDeltaTime * sensitivityX;
