@@ -10,7 +10,7 @@ public class EF_FPCamera : MonoBehaviour
     public float mouseSensitivity = 2.0f;
     float camVerticleRot = 0f;
 
-    bool lockCursor = true;
+    //bool lockCursor = true;
 
     // Start is called before the first frame update
     void Start()

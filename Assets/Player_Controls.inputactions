@@ -46,7 +46,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "2D Vector",
+                    "name": "WASD",
                     "id": "65974333-e729-4bfa-ac22-193710321e0e",
                     "path": "2DVector",
                     "interactions": "",
