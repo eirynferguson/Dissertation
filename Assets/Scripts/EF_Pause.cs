@@ -43,12 +43,12 @@ public class EF_Pause : MonoBehaviour
     {
         Debug.Log("Paused");
         Cursor.lockState = CursorLockMode.None;
-        Time.timeScale = 0f;
+        
 
         buttons.SetActive(true);
         pauseUI.SetActive(true);
         isPaused = true;
-
+        Time.timeScale = 0f;
         controlsButton.SetActive(false);
         controlsShown = false;
     }
@@ -67,6 +67,11 @@ public class EF_Pause : MonoBehaviour
     public void controls()
     {
         Time.timeScale = 0f;
+
+        buttons.SetActive(false);
+        pauseUI.SetActive(false);
+        isPaused = false;
+
         controlsButton.SetActive(true);
         controlsShown = true;
     }
