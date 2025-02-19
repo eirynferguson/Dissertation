@@ -9,6 +9,7 @@ public class EF_Pause : MonoBehaviour
     public GameObject buttons;
     public GameObject pauseUI;
     public GameObject controlsButton;
+    public GameObject playerView;
 
     public static bool isPaused = false;
     public static bool controlsShown = false;
@@ -28,9 +29,8 @@ public class EF_Pause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if (isPaused == true)
             {
-                Time.timeScale = 1f;
                 ResumeGame();
             }
             else
@@ -53,27 +53,33 @@ public class EF_Pause : MonoBehaviour
  
         controlsButton.SetActive(false);
         controlsShown = false;
+
+        playerView.SetActive(false);
     }
 
     public void ResumeGame()
     {
         Debug.Log("Unpaused");
         Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
 
         buttons.SetActive(false);
         pauseUI.SetActive(false);
         isPaused = false;
+
+        playerView.SetActive(true);
     }
 
     public void controls()
     {
-        
         buttons.SetActive(false);
         pauseUI.SetActive(false);
         isPaused = true;
 
         controlsButton.SetActive(true);
         controlsShown = true;
+
+        playerView.SetActive(false);
     }
 
     public void quit()

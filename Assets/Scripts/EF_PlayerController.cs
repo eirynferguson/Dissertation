@@ -7,6 +7,7 @@ public class EF_PlayerController : MonoBehaviour
 {
     Rigidbody rbody;
     InputAction moveAction;
+    //InputAction clickAction;
     Vector2 mousePosition;
 
     public Camera mainCamera;
@@ -21,6 +22,8 @@ public class EF_PlayerController : MonoBehaviour
 
         moveAction = GetComponent<PlayerInput>().actions.FindAction("Move");
         moveAction.Enable();
+        //clickAction = GetComponent<PlayerInput>().actions.FindAction("Click Item");
+        //clickAction.Enable();
         
         mainCamera = GetComponentInChildren<Camera>();    
     }
@@ -62,11 +65,15 @@ public class EF_PlayerController : MonoBehaviour
         return targetObject;
     }
 
-    public void ClickItem()
+    public void OnClickItem()
     {
         if (targetObject != null)
         {
             targetObject.SendMessage("OnInteract");
+        }
+        else
+        {
+            Debug.Log("Null target object" + targetObject);
         }
 
         Debug.Log("Item Clicked");
@@ -82,6 +89,7 @@ public class EF_PlayerController : MonoBehaviour
         if(Physics.Raycast(ray, out RaycastHit hit, 10, layerMask))
         {
             targetObject = GameObject.Find(hit.collider.transform.gameObject.name);
+            Debug.Log(targetObject);
         }
         else
         {
