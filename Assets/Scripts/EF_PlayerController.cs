@@ -7,6 +7,7 @@ public class EF_PlayerController : MonoBehaviour
 {
     Rigidbody rbody;
     InputAction moveAction;
+    Vector2 mousePosition;
 
     public Camera mainCamera;
     public GameObject targetObject;
@@ -46,7 +47,7 @@ public class EF_PlayerController : MonoBehaviour
         }
     }
 
-    /*public Vector2 GetMousePosition()
+    public Vector2 GetMousePosition()
     {
         return mousePosition;
     }
@@ -54,11 +55,21 @@ public class EF_PlayerController : MonoBehaviour
     public void OnMouse(InputValue mousePos)
     {
         mousePosition = mousePos.Get<Vector2>();
-    }*/
+    }
 
     public GameObject getTargetObject()
     {
         return targetObject;
+    }
+
+    public void ClickItem()
+    {
+        if (targetObject != null)
+        {
+            targetObject.SendMessage("OnInteract");
+        }
+
+        Debug.Log("Item Clicked");
     }
 
     void cameraRay()

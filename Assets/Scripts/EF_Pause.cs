@@ -37,7 +37,7 @@ public class EF_Pause : MonoBehaviour
             {
                 Time.timeScale = 0f;
                 PauseGame();
-                Debug.Log(Time.timeScale);
+                Debug.Log("timescale = " + Time.timeScale);
             }
         }
     }
