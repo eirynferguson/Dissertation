@@ -7,6 +7,7 @@ public class EF_Interactables : MonoBehaviour
 {
     public GameObject player;
     public string itemName;
+    public GameObject infoSheet;
 
     EF_PlayerController playerScript;
 
@@ -41,5 +42,7 @@ public class EF_Interactables : MonoBehaviour
     void infoPaper(string item)
     {
         Debug.Log("Info Sheet");
+
+        infoSheet.SetActive(true);
     }
 }
