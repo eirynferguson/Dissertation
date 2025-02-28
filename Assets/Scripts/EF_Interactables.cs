@@ -31,6 +31,15 @@ public class EF_Interactables : MonoBehaviour
     void OnInteract()
     {
         Debug.Log("Interacted");
+
+        if (itemName == "Paper")
+        {
+            infoPaper(itemName);
+        }
     }
 
+    void infoPaper(string item)
+    {
+        Debug.Log("Info Sheet");
+    }
 }
