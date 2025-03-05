@@ -8,6 +8,7 @@ public class EF_Interactables : MonoBehaviour
     public GameObject player;
     public string itemName;
     public GameObject infoSheet;
+    public GameObject questionUI;
 
     EF_PlayerController playerScript;
 
@@ -37,6 +38,10 @@ public class EF_Interactables : MonoBehaviour
         {
             infoPaper(itemName);
         }
+        else if (itemName == "Question Interact")
+        {
+            questionSheet(itemName);
+        }
     }
 
     void infoPaper(string item)
@@ -48,9 +53,19 @@ public class EF_Interactables : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    void questionSheet(string item)
+    {
+        Debug.Log("Question");
+
+        Cursor.lockState = CursorLockMode.None;
+        questionUI.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
     public void back()
     {
         infoSheet.SetActive(false);
+        questionUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
     }
