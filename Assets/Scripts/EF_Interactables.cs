@@ -43,6 +43,15 @@ public class EF_Interactables : MonoBehaviour
     {
         Debug.Log("Info Sheet");
 
+        Cursor.lockState = CursorLockMode.None;
         infoSheet.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void back()
+    {
+        infoSheet.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
     }
 }
