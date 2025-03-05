@@ -11,7 +11,7 @@ public class EF_Pause : MonoBehaviour
     public GameObject controlsButton;
     public GameObject playerView;
 
-    public static bool isPaused = false;
+    public bool isPaused = false;
     public static bool controlsShown = false;
 
     // Start is called before the first frame update

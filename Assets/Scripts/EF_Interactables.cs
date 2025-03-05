@@ -6,11 +6,15 @@ using UnityEngine.InputSystem;
 public class EF_Interactables : MonoBehaviour
 {
     public GameObject player;
-    public string itemName;
+    public GameObject canvas;
     public GameObject infoSheet;
     public GameObject questionUI;
 
+    public string itemName;
+    //public static bool isPaused;
+
     EF_PlayerController playerScript;
+    EF_Pause pauseScript;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +27,9 @@ public class EF_Interactables : MonoBehaviour
 
         itemName = gameObject.name;
         gameObject.layer = LayerMask.NameToLayer("Interactable");
+
+        pauseScript = canvas.GetComponent<EF_Pause>();
+        //isPaused = pauseScript.isPaused;
     }
 
     public void RemoveObject()
@@ -34,13 +41,16 @@ public class EF_Interactables : MonoBehaviour
     {
         Debug.Log("Interacted");
 
-        if (itemName == "Paper")
+        if (pauseScript.isPaused == false)
         {
-            infoPaper(itemName);
-        }
-        else if (itemName == "Question Interact")
-        {
-            questionSheet(itemName);
+            if (itemName == "Paper")
+            {
+                infoPaper(itemName);
+            }
+            else if (itemName == "Question Interact")
+            {
+                questionSheet(itemName);
+            }
         }
     }
 
@@ -64,9 +74,19 @@ public class EF_Interactables : MonoBehaviour
 
     public void back()
     {
+        if (pauseScript.isPaused == false)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
+        }
+
         infoSheet.SetActive(false);
         questionUI.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Time.timeScale = 1f;
+        
     }
 }
