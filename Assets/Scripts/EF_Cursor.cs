@@ -36,7 +36,7 @@ public class EF_Cursor : MonoBehaviour
         }
     }
 
-    void interactable()
+    void interactable() //changes colour of playerview dot if item is interactable
     {
         if (isInteract)
         {

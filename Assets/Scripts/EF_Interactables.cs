@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class EF_Interactables : MonoBehaviour
@@ -11,7 +12,6 @@ public class EF_Interactables : MonoBehaviour
     public GameObject questionUI;
 
     public string itemName;
-    //public static bool isPaused;
 
     EF_PlayerController playerScript;
     EF_Pause pauseScript;
@@ -28,8 +28,7 @@ public class EF_Interactables : MonoBehaviour
         itemName = gameObject.name;
         gameObject.layer = LayerMask.NameToLayer("Interactable");
 
-        pauseScript = canvas.GetComponent<EF_Pause>();
-        //isPaused = pauseScript.isPaused;
+        pauseScript = canvas.GetComponent<EF_Pause>(); //call pause script to check pause state
     }
 
     public void RemoveObject()
@@ -41,7 +40,7 @@ public class EF_Interactables : MonoBehaviour
     {
         Debug.Log("Interacted");
 
-        if (pauseScript.isPaused == false)
+        if (pauseScript.isPaused == false) //prevents other UI showing ontop of pause menu 
         {
             if (itemName == "Paper")
             {
@@ -74,12 +73,12 @@ public class EF_Interactables : MonoBehaviour
 
     public void back()
     {
-        if (pauseScript.isPaused == false)
+        if (pauseScript.isPaused == false)  //if not paused lock mouse and resume
         {
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1f;
         }
-        else
+        else  //if pause menu behind UI keep mouse moving and background paused
         {
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0f;
