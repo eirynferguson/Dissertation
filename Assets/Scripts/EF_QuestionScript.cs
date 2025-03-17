@@ -22,7 +22,7 @@ public class EF_QuestionScript : MonoBehaviour
         
     }
 
-    public void submitAns()
+    /*public void submitAns()
     {
         if (inputText != null)
         {
@@ -36,5 +36,5 @@ public class EF_QuestionScript : MonoBehaviour
             }
         }
 
-    }
+    }*/
 }
