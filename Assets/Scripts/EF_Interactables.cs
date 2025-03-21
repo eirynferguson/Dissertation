@@ -32,10 +32,10 @@ public class EF_Interactables : MonoBehaviour
         pauseScript = canvas.GetComponent<EF_Pause>(); //call pause script to check pause state
     }
 
-    public void RemoveObject()
+    /*public void RemoveObject()
     {
         this.gameObject.SetActive(false);
-    }
+    }*/
 
     void OnInteract()
     {
@@ -47,14 +47,14 @@ public class EF_Interactables : MonoBehaviour
             {
                 infoPaper(itemName);
             }
-            else if (itemName == "Question Interact")
+            else if (itemName == "Question 1")
             {
                 questionSheet(itemName);
             }
-            else if (itemName == "Question Interact2")
+            /*else if (itemName == "Question 2")
             {
                 questionSheet2(itemName);
-            }
+            }*/
         }
     }
 
@@ -78,7 +78,7 @@ public class EF_Interactables : MonoBehaviour
 
     void questionSheet2(string item)
     {
-        Debug.Log("Question");
+        Debug.Log("Question 2");
 
         Cursor.lockState = CursorLockMode.None;
         twoquestionUI.SetActive(true);
