@@ -25,7 +25,9 @@ public class EF_PlayerController : MonoBehaviour
         //clickAction = GetComponent<PlayerInput>().actions.FindAction("Click Item");
         //clickAction.Enable();
         
-        mainCamera = GetComponentInChildren<Camera>();    
+        mainCamera = GetComponentInChildren<Camera>();
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame

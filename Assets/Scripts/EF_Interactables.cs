@@ -9,6 +9,8 @@ public class EF_Interactables : MonoBehaviour
     public GameObject player;
     public GameObject canvas;
     public GameObject question;
+    public GameObject sceneChange;
+
     public GameObject infoSheet;
     public GameObject questionUI;
     //public GameObject twoquestionUI;
@@ -19,6 +21,7 @@ public class EF_Interactables : MonoBehaviour
     EF_PlayerController playerScript;
     EF_Pause pauseScript;
     EF_QuestionScript questionScript;
+    EF_SceneChanger changeScene;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,7 @@ public class EF_Interactables : MonoBehaviour
 
         pauseScript = canvas.GetComponent<EF_Pause>(); //call pause script to check pause state
         questionScript = question.GetComponent<EF_QuestionScript>(); //call question script to get points
+        changeScene = sceneChange.GetComponent<EF_SceneChanger>();
     }
 
     /*public void RemoveObject()
@@ -98,6 +102,7 @@ public class EF_Interactables : MonoBehaviour
         if (questionScript.points == 5)
         {
             Debug.Log("Next Level");
+            changeScene.ChangeScene("SceneTwo");
         }
     }
 

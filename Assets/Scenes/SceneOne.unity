@@ -1860,6 +1860,7 @@ MonoBehaviour:
   player: {fileID: 1833434733}
   canvas: {fileID: 680874275}
   question: {fileID: 1385213610}
+  sceneChange: {fileID: 1249133967}
   infoSheet: {fileID: 1720109738}
   questionUI: {fileID: 862893841}
   nextLevel: {fileID: 1640504836}
@@ -3318,6 +3319,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152196253}
   m_CullTransparentMesh: 1
+--- !u!1 &1249133967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1249133969}
+  - component: {fileID: 1249133968}
+  m_Layer: 0
+  m_Name: SceneChanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1249133968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249133967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f5142bc04846284db9cdc9764f28a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1249133969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249133967}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.333313, y: 0.25367165, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1275752839
 GameObject:
   m_ObjectHideFlags: 0
@@ -4037,6 +4082,7 @@ MonoBehaviour:
   player: {fileID: 1833434733}
   canvas: {fileID: 680874275}
   question: {fileID: 1385213610}
+  sceneChange: {fileID: 1249133967}
   infoSheet: {fileID: 1720109738}
   questionUI: {fileID: 862893841}
   nextLevel: {fileID: 1640504836}
@@ -4783,6 +4829,7 @@ MonoBehaviour:
   player: {fileID: 1833434733}
   canvas: {fileID: 680874275}
   question: {fileID: 1385213610}
+  sceneChange: {fileID: 1249133967}
   infoSheet: {fileID: 1720109738}
   questionUI: {fileID: 862893841}
   nextLevel: {fileID: 1640504836}
@@ -5526,6 +5573,7 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   targetObject: {fileID: 0}
   objectSpeed: 5
+  sceneChanger: {fileID: 1249133967}
 --- !u!1 &1853799958
 GameObject:
   m_ObjectHideFlags: 0
@@ -5870,3 +5918,4 @@ SceneRoots:
   - {fileID: 680874279}
   - {fileID: 1853799961}
   - {fileID: 184143432}
+  - {fileID: 1249133969}
