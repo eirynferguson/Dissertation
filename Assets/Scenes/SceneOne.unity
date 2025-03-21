@@ -1859,9 +1859,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1833434733}
   canvas: {fileID: 680874275}
+  question: {fileID: 1385213610}
   infoSheet: {fileID: 1720109738}
   questionUI: {fileID: 862893841}
-  twoquestionUI: {fileID: 0}
+  nextLevel: {fileID: 1640504836}
   itemName: 
 --- !u!1 &679033655
 GameObject:
@@ -4035,9 +4036,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1833434733}
   canvas: {fileID: 680874275}
+  question: {fileID: 1385213610}
   infoSheet: {fileID: 1720109738}
   questionUI: {fileID: 862893841}
-  twoquestionUI: {fileID: 0}
+  nextLevel: {fileID: 1640504836}
   itemName: 
 --- !u!65 &1385213613
 BoxCollider:
@@ -4672,7 +4674,8 @@ GameObject:
   - component: {fileID: 1640504840}
   - component: {fileID: 1640504839}
   - component: {fileID: 1640504838}
-  m_Layer: 0
+  - component: {fileID: 1640504841}
+  m_Layer: 3
   m_Name: Next Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4688,8 +4691,8 @@ Transform:
   m_GameObject: {fileID: 1640504836}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -325, y: -11.913, z: 6}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 184143432}
@@ -4765,6 +4768,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640504836}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1640504841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640504836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62cbcb5619e59a849a006a41ba1812ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1833434733}
+  canvas: {fileID: 680874275}
+  question: {fileID: 1385213610}
+  infoSheet: {fileID: 1720109738}
+  questionUI: {fileID: 862893841}
+  nextLevel: {fileID: 1640504836}
+  itemName: 
 --- !u!1 &1683792078
 GameObject:
   m_ObjectHideFlags: 0

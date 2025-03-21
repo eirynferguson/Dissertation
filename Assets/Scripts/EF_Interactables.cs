@@ -8,14 +8,17 @@ public class EF_Interactables : MonoBehaviour
 {
     public GameObject player;
     public GameObject canvas;
+    public GameObject question;
     public GameObject infoSheet;
     public GameObject questionUI;
-    public GameObject twoquestionUI;
+    //public GameObject twoquestionUI;
+    public GameObject nextLevel;
 
     public string itemName;
 
     EF_PlayerController playerScript;
     EF_Pause pauseScript;
+    EF_QuestionScript questionScript;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +33,7 @@ public class EF_Interactables : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("Interactable");
 
         pauseScript = canvas.GetComponent<EF_Pause>(); //call pause script to check pause state
+        questionScript = question.GetComponent<EF_QuestionScript>(); //call question script to get points
     }
 
     /*public void RemoveObject()
@@ -50,6 +54,10 @@ public class EF_Interactables : MonoBehaviour
             else if (itemName == "Question 1")
             {
                 questionSheet(itemName);
+            }
+            else if (itemName == "Next Level")
+            {
+                loadNextLevel(itemName);
             }
             /*else if (itemName == "Question 2")
             {
@@ -76,13 +84,21 @@ public class EF_Interactables : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    void questionSheet2(string item)
+    /*void questionSheet2(string item)
     {
         Debug.Log("Question 2");
 
         Cursor.lockState = CursorLockMode.None;
         twoquestionUI.SetActive(true);
         Time.timeScale = 0f;
+    }*/
+
+    void loadNextLevel(string item)
+    {
+        if (questionScript.points == 5)
+        {
+            Debug.Log("Next Level");
+        }
     }
 
     public void back()
@@ -100,6 +116,6 @@ public class EF_Interactables : MonoBehaviour
 
         infoSheet.SetActive(false);
         questionUI.SetActive(false);
-        twoquestionUI.SetActive(false);        
+        //twoquestionUI.SetActive(false);        
     }
 }
