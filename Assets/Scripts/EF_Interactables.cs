@@ -22,7 +22,7 @@ public class EF_Interactables : MonoBehaviour
     public GameObject nextLevel;
 
     public string itemName;
-    bool hasKey = false;
+    bool hasKey;
 
     EF_PlayerController playerScript;
     EF_Pause pauseScript;
@@ -79,11 +79,13 @@ public class EF_Interactables : MonoBehaviour
             }
             else if (itemName == "Key")
             {
-                holdKey();
+                holdKey(hasKey);
+                Debug.Log("Return" + hasKey);
             }
             else if (itemName == "Door")
             {
-                openDoor();
+                //Debug.Log(hasKey);
+                openDoor(hasKey);
             }
 
         }
@@ -159,15 +161,19 @@ public class EF_Interactables : MonoBehaviour
         Debug.Log("End wait");
     }
 
-    void holdKey()
+    bool holdKey(bool hasKey)
     {
         Debug.Log("key");
 
         RemoveObject();
         hasKey = true;
+
+        Debug.Log(hasKey);
+
+        return hasKey;
     }
 
-    void openDoor()
+    void openDoor(bool hasKey)
     {
         if (hasKey == false)
         {
