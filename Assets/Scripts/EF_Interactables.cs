@@ -13,7 +13,7 @@ public class EF_Interactables : MonoBehaviour
 
     public GameObject infoSheet;
     public GameObject questionUI;
-    //public GameObject twoquestionUI;
+    public GameObject twoquestionUI;
     public GameObject nextLevel;
 
     public string itemName;
@@ -63,10 +63,10 @@ public class EF_Interactables : MonoBehaviour
             {
                 loadNextLevel(itemName);
             }
-            /*else if (itemName == "Question 2")
+            else if (itemName == "Question 2")
             {
                 questionSheet2(itemName);
-            }*/
+            }
         }
     }
 
@@ -85,17 +85,19 @@ public class EF_Interactables : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         questionUI.SetActive(true);
+        twoquestionUI.SetActive(false);
         Time.timeScale = 0f;
     }
 
-    /*void questionSheet2(string item)
+    void questionSheet2(string item)
     {
         Debug.Log("Question 2");
 
         Cursor.lockState = CursorLockMode.None;
+        questionUI.SetActive(false);
         twoquestionUI.SetActive(true);
         Time.timeScale = 0f;
-    }*/
+    }
 
     void loadNextLevel(string item)
     {
@@ -121,6 +123,6 @@ public class EF_Interactables : MonoBehaviour
 
         infoSheet.SetActive(false);
         questionUI.SetActive(false);
-        //twoquestionUI.SetActive(false);        
+        twoquestionUI.SetActive(false);        
     }
 }
