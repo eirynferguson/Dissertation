@@ -13,12 +13,18 @@ public class EF_QuestionScript : MonoBehaviour
     public GameObject incorrectTxt2;
     public GameObject selectAnsTxt2;
 
+    public GameObject correctTxt3;
+    public GameObject incorrectTxt3;
+    public GameObject selectAnsTxt3;
+
     public int points = 0;
 
     bool correct = false;
     bool incorrect = false;
     bool correct2 = false;
     bool incorrect2 = false;
+    bool correct3 = false;
+    bool incorrect3 = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +36,10 @@ public class EF_QuestionScript : MonoBehaviour
         correctTxt2.SetActive(false);
         incorrectTxt2.SetActive(false);
         selectAnsTxt2.SetActive(true);
+
+        correctTxt3.SetActive(false);
+        incorrectTxt3.SetActive(false);
+        selectAnsTxt3.SetActive(true);
     }
 
     // Update is called once per frame
@@ -45,6 +55,11 @@ public class EF_QuestionScript : MonoBehaviour
             incorrectTxt2.SetActive(false);
             selectAnsTxt2.SetActive(true);
         }
+        else if (incorrect3 == true)
+        {
+            incorrectTxt3.SetActive(false);
+            selectAnsTxt3.SetActive(true);
+        }
         else if (correct == true)
         {
             correctTxt.SetActive(true);
@@ -54,6 +69,17 @@ public class EF_QuestionScript : MonoBehaviour
         {
             correctTxt2.SetActive(true);
             selectAnsTxt2.SetActive(false);
+        }
+        else if (correct3 == true)
+        {
+            correctTxt3.SetActive(true);
+            selectAnsTxt3.SetActive(false);
+        }
+        else
+        {
+            selectAnsTxt.SetActive(false);
+            selectAnsTxt2.SetActive(false);
+            selectAnsTxt3.SetActive(false);
         }
     }
 
@@ -81,6 +107,18 @@ public class EF_QuestionScript : MonoBehaviour
         Debug.Log("Points = " + points);
     }
 
+    public void correctAns3()
+    {
+        correct3 = true;
+
+        selectAnsTxt3.SetActive(false);
+        incorrectTxt3.SetActive(false);
+        correctTxt3.SetActive(true);
+
+        points = points + 5;
+        Debug.Log("Points = " + points);
+    } 
+
     public void incorrectAns()
     {
         incorrect = true;
@@ -97,5 +135,14 @@ public class EF_QuestionScript : MonoBehaviour
         selectAnsTxt2.SetActive(false);
         correctTxt2.SetActive(false);
         incorrectTxt2.SetActive(true);
+    }
+
+    public void incorrectAns3()
+    {
+        incorrect3 = true;
+
+        selectAnsTxt3.SetActive(false);
+        correctTxt3.SetActive(false);
+        incorrectTxt3.SetActive(true);
     }
 }

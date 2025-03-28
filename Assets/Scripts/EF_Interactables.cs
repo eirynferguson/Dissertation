@@ -13,7 +13,10 @@ public class EF_Interactables : MonoBehaviour
 
     public GameObject infoSheet;
     public GameObject questionUI;
-    public GameObject twoquestionUI;
+    public GameObject twoQuestionUI;
+    public GameObject threeQuestionUI;
+
+    public GameObject key;
     public GameObject nextLevel;
 
     public string itemName;
@@ -33,6 +36,7 @@ public class EF_Interactables : MonoBehaviour
         }
 
         itemName = gameObject.name;
+        key.SetActive(false);
         gameObject.layer = LayerMask.NameToLayer("Interactable");
 
         pauseScript = canvas.GetComponent<EF_Pause>(); //call pause script to check pause state
@@ -40,10 +44,10 @@ public class EF_Interactables : MonoBehaviour
         changeScene = sceneChange.GetComponent<EF_SceneChanger>();
     }
 
-    /*public void RemoveObject()
+    public void RemoveObject()
     {
         this.gameObject.SetActive(false);
-    }*/
+    }
 
     void OnInteract()
     {
@@ -59,14 +63,23 @@ public class EF_Interactables : MonoBehaviour
             {
                 questionSheet(itemName);
             }
-            else if (itemName == "Next Level")
-            {
-                loadNextLevel(itemName);
-            }
             else if (itemName == "Question 2")
             {
                 questionSheet2(itemName);
             }
+            else if (itemName == "Question 3")
+            {
+                questionSheet3(itemName);
+            }
+            else if (itemName == "Next Level")
+            {
+                loadNextLevel(itemName);
+            }
+            else if (itemName == "Key")
+            {
+                holdKey(itemName);
+            }
+
         }
     }
 
@@ -84,9 +97,11 @@ public class EF_Interactables : MonoBehaviour
         Debug.Log("Question");
 
         Cursor.lockState = CursorLockMode.None;
-        questionUI.SetActive(true);
-        twoquestionUI.SetActive(false);
         Time.timeScale = 0f;
+
+        questionUI.SetActive(true);
+        twoQuestionUI.SetActive(false);
+        threeQuestionUI.SetActive(false);
     }
 
     void questionSheet2(string item)
@@ -94,18 +109,40 @@ public class EF_Interactables : MonoBehaviour
         Debug.Log("Question 2");
 
         Cursor.lockState = CursorLockMode.None;
-        questionUI.SetActive(false);
-        twoquestionUI.SetActive(true);
         Time.timeScale = 0f;
+
+        questionUI.SetActive(false);
+        twoQuestionUI.SetActive(true);
+        threeQuestionUI.SetActive(false);  
+    }
+
+    void questionSheet3(string item)
+    {
+        Debug.Log("Question 3");
+
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0f;
+
+        questionUI.SetActive(false);
+        twoQuestionUI.SetActive(false);
+        threeQuestionUI.SetActive(true);
     }
 
     void loadNextLevel(string item)
     {
-        if (questionScript.points == 5)
+        if (questionScript.points == 15)
         {
             Debug.Log("Next Level");
-            changeScene.ChangeScene("SceneTwo");
+            key.SetActive(true);
+            //changeScene.ChangeScene("SceneTwo");
         }
+    }
+
+    void holdKey(string item)
+    {
+        Debug.Log("key");
+
+        RemoveObject();
     }
 
     public void back()
@@ -123,6 +160,7 @@ public class EF_Interactables : MonoBehaviour
 
         infoSheet.SetActive(false);
         questionUI.SetActive(false);
-        twoquestionUI.SetActive(false);        
+        twoQuestionUI.SetActive(false);
+        threeQuestionUI.SetActive(false);
     }
 }
