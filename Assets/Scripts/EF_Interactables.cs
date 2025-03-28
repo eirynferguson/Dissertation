@@ -15,11 +15,14 @@ public class EF_Interactables : MonoBehaviour
     public GameObject questionUI;
     public GameObject twoQuestionUI;
     public GameObject threeQuestionUI;
+    public GameObject pointsUI;
+    public GameObject keyUI;
 
     public GameObject key;
     public GameObject nextLevel;
 
     public string itemName;
+    bool hasKey = false;
 
     EF_PlayerController playerScript;
     EF_Pause pauseScript;
@@ -36,7 +39,6 @@ public class EF_Interactables : MonoBehaviour
         }
 
         itemName = gameObject.name;
-        key.SetActive(false);
         gameObject.layer = LayerMask.NameToLayer("Interactable");
 
         pauseScript = canvas.GetComponent<EF_Pause>(); //call pause script to check pause state
@@ -57,33 +59,37 @@ public class EF_Interactables : MonoBehaviour
         {
             if (itemName == "Paper")
             {
-                infoPaper(itemName);
+                infoPaper();
             }
             else if (itemName == "Question 1")
             {
-                questionSheet(itemName);
+                questionSheet();
             }
             else if (itemName == "Question 2")
             {
-                questionSheet2(itemName);
+                questionSheet2();
             }
             else if (itemName == "Question 3")
             {
-                questionSheet3(itemName);
+                questionSheet3();
             }
             else if (itemName == "Next Level")
             {
-                loadNextLevel(itemName);
+                loadNextLevel();
             }
             else if (itemName == "Key")
             {
-                holdKey(itemName);
+                holdKey();
+            }
+            else if (itemName == "Door")
+            {
+                openDoor();
             }
 
         }
     }
 
-    void infoPaper(string item)
+    void infoPaper()
     {
         Debug.Log("Info Sheet");
 
@@ -92,7 +98,7 @@ public class EF_Interactables : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    void questionSheet(string item)
+    void questionSheet()
     {
         Debug.Log("Question");
 
@@ -104,7 +110,7 @@ public class EF_Interactables : MonoBehaviour
         threeQuestionUI.SetActive(false);
     }
 
-    void questionSheet2(string item)
+    void questionSheet2()
     {
         Debug.Log("Question 2");
 
@@ -116,7 +122,7 @@ public class EF_Interactables : MonoBehaviour
         threeQuestionUI.SetActive(false);  
     }
 
-    void questionSheet3(string item)
+    void questionSheet3()
     {
         Debug.Log("Question 3");
 
@@ -128,21 +134,52 @@ public class EF_Interactables : MonoBehaviour
         threeQuestionUI.SetActive(true);
     }
 
-    void loadNextLevel(string item)
+    void loadNextLevel()
     {
         if (questionScript.points == 15)
         {
             Debug.Log("Next Level");
             key.SetActive(true);
-            //changeScene.ChangeScene("SceneTwo");
+        }
+        else
+        {
+            pointsUI.SetActive(true);
+            StartCoroutine(wait(pointsUI));
         }
     }
 
-    void holdKey(string item)
+    IEnumerator wait(GameObject item)
+    {
+        Debug.Log("Start wait");
+
+        yield return new WaitForSeconds(5);
+
+        item.SetActive(false);
+
+        Debug.Log("End wait");
+    }
+
+    void holdKey()
     {
         Debug.Log("key");
 
         RemoveObject();
+        hasKey = true;
+    }
+
+    void openDoor()
+    {
+        if (hasKey == false)
+        {
+            Debug.Log("Door Locked");
+            keyUI.SetActive(true);
+            StartCoroutine(wait(keyUI));
+        }
+        else if (hasKey == true)
+        {
+            Debug.Log("Unlocked");
+            changeScene.ChangeScene("SceneTwo");
+        }
     }
 
     public void back()
