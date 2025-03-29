@@ -48,7 +48,7 @@ public class EF_PlayerController : MonoBehaviour
         {
             rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
             transform.position += (mainCamera.transform.forward * inputVector.y * objectSpeed * Time.fixedDeltaTime) + (mainCamera.transform.right * inputVector.x * objectSpeed * Time.fixedDeltaTime);
-            transform.position = new Vector3(transform.position.x, 0.8f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
         }
     }
 
