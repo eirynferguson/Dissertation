@@ -22,7 +22,7 @@ public class EF_Interactables : MonoBehaviour
     public GameObject nextLevel;
 
     public string itemName;
-    bool hasKey;
+    public bool hasKey = false;
 
     EF_PlayerController playerScript;
     EF_Pause pauseScript;
@@ -80,14 +80,14 @@ public class EF_Interactables : MonoBehaviour
             else if (itemName == "Key")
             {
                 holdKey(hasKey);
-                Debug.Log("Return" + hasKey);
+
+                Debug.Log("Returns: " + hasKey);
             }
             else if (itemName == "Door")
             {
-                //Debug.Log(hasKey);
+                Debug.Log("Has Key = " + hasKey);
                 openDoor(hasKey);
             }
-
         }
     }
 
@@ -154,34 +154,39 @@ public class EF_Interactables : MonoBehaviour
     {
         Debug.Log("Start wait");
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
 
         item.SetActive(false);
 
         Debug.Log("End wait");
     }
 
-    bool holdKey(bool hasKey)
+    void holdKey(bool pocketKey)
     {
         Debug.Log("key");
 
         RemoveObject();
-        hasKey = true;
+        pocketKey = true; 
 
-        Debug.Log(hasKey);
+        Debug.Log(pocketKey); //returns true
 
-        return hasKey;
+        /*if (pocketKey == true)
+        {
+            OnInteract();
+        }*/
     }
 
-    void openDoor(bool hasKey)
+    void openDoor(bool useKey)
     {
-        if (hasKey == false)
+        Debug.Log("HasKey = " + useKey);
+
+        if (useKey == false)
         {
             Debug.Log("Door Locked");
             keyUI.SetActive(true);
             StartCoroutine(wait(keyUI));
         }
-        else if (hasKey == true)
+        else if (useKey == true)
         {
             Debug.Log("Unlocked");
             changeScene.ChangeScene("SceneTwo");
