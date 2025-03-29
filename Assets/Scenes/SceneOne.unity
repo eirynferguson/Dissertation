@@ -8800,7 +8800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1353373829
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13105,7 +13105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1956949206
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14212,8 +14212,8 @@ MonoBehaviour:
   pointsUI: {fileID: 929545398}
   keyUI: {fileID: 1353373828}
   nextLevel: {fileID: 2117494415}
-  lockedScreen: {fileID: 0}
-  unlockedScreen: {fileID: 0}
+  lockedScreen: {fileID: 1352756865}
+  unlockedScreen: {fileID: 1611074436}
   itemName: 
 --- !u!1 &2134835359
 GameObject:

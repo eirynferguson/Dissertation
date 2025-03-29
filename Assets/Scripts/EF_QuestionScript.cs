@@ -75,12 +75,12 @@ public class EF_QuestionScript : MonoBehaviour
             correctTxt3.SetActive(true);
             selectAnsTxt3.SetActive(false);
         }
-        else
+        /*else
         {
             selectAnsTxt.SetActive(false);
             selectAnsTxt2.SetActive(false);
             selectAnsTxt3.SetActive(false);
-        }
+        }*/
     }
 
     public void correctAns()
