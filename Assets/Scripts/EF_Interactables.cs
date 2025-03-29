@@ -18,11 +18,11 @@ public class EF_Interactables : MonoBehaviour
     public GameObject pointsUI;
     public GameObject keyUI;
 
-    public GameObject key;
     public GameObject nextLevel;
+    public GameObject lockedScreen;
+    public GameObject unlockedScreen;
 
     public string itemName;
-    public bool hasKey = false;
 
     EF_PlayerController playerScript;
     EF_Pause pauseScript;
@@ -77,16 +77,16 @@ public class EF_Interactables : MonoBehaviour
             {
                 loadNextLevel();
             }
-            else if (itemName == "Key")
-            {
-                holdKey(hasKey);
-
-                Debug.Log("Returns: " + hasKey);
-            }
             else if (itemName == "Door")
-            {
-                Debug.Log("Has Key = " + hasKey);
-                openDoor(hasKey);
+            { 
+                if (questionScript.points == 15)
+                {
+                    openDoor();
+                }
+                else
+                {
+                    lockedDoor();
+                }
             }
         }
     }
@@ -141,10 +141,14 @@ public class EF_Interactables : MonoBehaviour
         if (questionScript.points == 15)
         {
             Debug.Log("Next Level");
-            key.SetActive(true);
+            unlockedScreen.SetActive(true);
+            lockedScreen.SetActive(false);
         }
         else
         {
+            unlockedScreen.SetActive(false);
+            lockedScreen.SetActive(true);
+
             pointsUI.SetActive(true);
             StartCoroutine(wait(pointsUI));
         }
@@ -161,36 +165,17 @@ public class EF_Interactables : MonoBehaviour
         Debug.Log("End wait");
     }
 
-    void holdKey(bool pocketKey)
+    void openDoor()
     {
-        Debug.Log("key");
-
-        RemoveObject();
-        pocketKey = true; 
-
-        Debug.Log(pocketKey); //returns true
-
-        /*if (pocketKey == true)
-        {
-            OnInteract();
-        }*/
+        Debug.Log("Unlocked");
+        changeScene.ChangeScene("SceneTwo");
     }
 
-    void openDoor(bool useKey)
+    void lockedDoor()
     {
-        Debug.Log("HasKey = " + useKey);
-
-        if (useKey == false)
-        {
-            Debug.Log("Door Locked");
-            keyUI.SetActive(true);
-            StartCoroutine(wait(keyUI));
-        }
-        else if (useKey == true)
-        {
-            Debug.Log("Unlocked");
-            changeScene.ChangeScene("SceneTwo");
-        }
+        Debug.Log("Door Locked");
+        keyUI.SetActive(true);
+        StartCoroutine(wait(keyUI));
     }
 
     public void back()

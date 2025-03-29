@@ -1386,7 +1386,6 @@ Transform:
   - {fileID: 2018703834}
   - {fileID: 353132075}
   - {fileID: 2117494416}
-  - {fileID: 1501663822}
   - {fileID: 1827070915}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2368,10 +2367,10 @@ MonoBehaviour:
   threeQuestionUI: {fileID: 1634338806}
   pointsUI: {fileID: 929545398}
   keyUI: {fileID: 1353373828}
-  key: {fileID: 1501663821}
   nextLevel: {fileID: 2117494415}
+  lockedScreen: {fileID: 0}
+  unlockedScreen: {fileID: 0}
   itemName: 
-  hasKey: 0
 --- !u!65 &353132079
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6818,6 +6817,7 @@ Transform:
   - {fileID: 1894666792}
   - {fileID: 37551222}
   - {fileID: 1917639528}
+  - {fileID: 1501663822}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1105422705
@@ -8800,7 +8800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1353373829
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9753,11 +9753,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 184143432}
+    m_TransformParent: {fileID: 1102742894}
     m_Modifications:
     - target: {fileID: 1508765130452242327, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2498504952586042402, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
       propertyPath: m_LocalScale.x
@@ -9773,15 +9773,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2498504952586042402, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -335.41
+      value: -6.006
       objectReference: {fileID: 0}
     - target: {fileID: 2498504952586042402, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.723
+      value: 1.416
       objectReference: {fileID: 0}
     - target: {fileID: 2498504952586042402, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.52
+      value: -5.716
       objectReference: {fileID: 0}
     - target: {fileID: 2498504952586042402, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9817,27 +9817,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3019568617730713240, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3019568617730713240, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4723547211238572199, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5875691210554700269, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3019568617730713240, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1501663823}
     - targetCorrespondingSourceObject: {fileID: 3019568617730713240, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1501663826}
@@ -9852,32 +9849,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2498504952586042402, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
   m_PrefabInstance: {fileID: 1501663820}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1501663823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1501663821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62cbcb5619e59a849a006a41ba1812ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1833434733}
-  canvas: {fileID: 680874275}
-  question: {fileID: 1850928353}
-  sceneChange: {fileID: 1249133967}
-  infoSheet: {fileID: 1720109738}
-  questionUI: {fileID: 862893841}
-  twoQuestionUI: {fileID: 1308935905}
-  threeQuestionUI: {fileID: 1634338806}
-  pointsUI: {fileID: 929545398}
-  keyUI: {fileID: 1353373828}
-  key: {fileID: 1501663821}
-  nextLevel: {fileID: 2117494415}
-  itemName: 
-  hasKey: 0
 --- !u!136 &1501663826
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12015,10 +11986,10 @@ MonoBehaviour:
   threeQuestionUI: {fileID: 1634338806}
   pointsUI: {fileID: 929545398}
   keyUI: {fileID: 1353373828}
-  key: {fileID: 1501663821}
   nextLevel: {fileID: 2117494415}
+  lockedScreen: {fileID: 0}
+  unlockedScreen: {fileID: 0}
   itemName: 
-  hasKey: 0
 --- !u!65 &1827070917
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12335,10 +12306,10 @@ MonoBehaviour:
   threeQuestionUI: {fileID: 1634338806}
   pointsUI: {fileID: 929545398}
   keyUI: {fileID: 1353373828}
-  key: {fileID: 1501663821}
   nextLevel: {fileID: 2117494415}
+  lockedScreen: {fileID: 0}
+  unlockedScreen: {fileID: 0}
   itemName: 
-  hasKey: 0
 --- !u!65 &1850928356
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13134,7 +13105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1956949206
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13152,7 +13123,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 50}
+  m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1956949207
 MonoBehaviour:
@@ -13174,7 +13145,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Need a key to unlock.
+  m_text: Complete questions to unlock
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13712,10 +13683,10 @@ MonoBehaviour:
   threeQuestionUI: {fileID: 1634338806}
   pointsUI: {fileID: 929545398}
   keyUI: {fileID: 1353373828}
-  key: {fileID: 1501663821}
   nextLevel: {fileID: 2117494415}
+  lockedScreen: {fileID: 0}
+  unlockedScreen: {fileID: 0}
   itemName: 
-  hasKey: 0
 --- !u!65 &2012775089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13893,10 +13864,10 @@ MonoBehaviour:
   threeQuestionUI: {fileID: 1634338806}
   pointsUI: {fileID: 929545398}
   keyUI: {fileID: 1353373828}
-  key: {fileID: 1501663821}
   nextLevel: {fileID: 2117494415}
+  lockedScreen: {fileID: 0}
+  unlockedScreen: {fileID: 0}
   itemName: 
-  hasKey: 0
 --- !u!65 &2018703838
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14240,10 +14211,10 @@ MonoBehaviour:
   threeQuestionUI: {fileID: 1634338806}
   pointsUI: {fileID: 929545398}
   keyUI: {fileID: 1353373828}
-  key: {fileID: 1501663821}
   nextLevel: {fileID: 2117494415}
+  lockedScreen: {fileID: 0}
+  unlockedScreen: {fileID: 0}
   itemName: 
-  hasKey: 0
 --- !u!1 &2134835359
 GameObject:
   m_ObjectHideFlags: 0

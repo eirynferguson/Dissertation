@@ -927,7 +927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &699626927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2236,10 +2236,10 @@ MonoBehaviour:
 
 
     - Click on the
-    manager''s computer to get the key
+    manager''s computer to unlock the door
 
 
-    - Find the key to unlock the door
+    - Go through the door to progress
 
 
     -
