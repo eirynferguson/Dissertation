@@ -2228,22 +2228,22 @@ MonoBehaviour:
   m_text: '- Answer questions to gain points
 
 
-    - Questions can be found on computers
+    - Questions can be found on the
+    computers
 
 
-    -
-    If you get stuck, find the book for help
+    - If you get stuck, find the book for help
 
 
-    - Click on the head computer to
-    get the key
+    - Click on the
+    manager''s computer to get the key
 
 
     - Find the key to unlock the door
 
 
-    - Tip - Cursor turns
-    red when an object is interactable'
+    -
+    Tip - Cursor turns red when an object is interactable'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
