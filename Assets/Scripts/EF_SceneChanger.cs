@@ -15,6 +15,11 @@ public class EF_SceneChanger : MonoBehaviour
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+
+        if (sceneName == "EndScreen")
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
     public void exit()
