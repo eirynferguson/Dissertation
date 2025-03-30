@@ -23,6 +23,7 @@ public class EF_Interactables : MonoBehaviour
     public GameObject unlockedScreen;
 
     public string itemName;
+    public string scene;
 
     EF_PlayerController playerScript;
     EF_Pause pauseScript;
@@ -81,7 +82,7 @@ public class EF_Interactables : MonoBehaviour
             { 
                 if (questionScript.points == 15)
                 {
-                    openDoor();
+                    openDoor(scene);
                 }
                 else
                 {
@@ -165,10 +166,11 @@ public class EF_Interactables : MonoBehaviour
         Debug.Log("End wait");
     }
 
-    void openDoor()
+    void openDoor(string sceneName)
     {
         Debug.Log("Unlocked");
-        changeScene.ChangeScene("SceneTwo");
+        changeScene.ChangeScene(sceneName);
+        questionScript.points = 0; 
     }
 
     void lockedDoor()
