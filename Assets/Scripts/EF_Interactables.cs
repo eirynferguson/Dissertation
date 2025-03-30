@@ -17,6 +17,7 @@ public class EF_Interactables : MonoBehaviour
     public GameObject threeQuestionUI;
     public GameObject pointsUI;
     public GameObject keyUI;
+    public GameObject levelUI;
 
     public GameObject nextLevel;
     public GameObject lockedScreen;
@@ -45,6 +46,8 @@ public class EF_Interactables : MonoBehaviour
         pauseScript = canvas.GetComponent<EF_Pause>(); //call pause script to check pause state
         questionScript = question.GetComponent<EF_QuestionScript>(); //call question script to get points
         changeScene = sceneChange.GetComponent<EF_SceneChanger>();
+
+        wait(levelUI);
     }
 
     public void RemoveObject()
@@ -155,7 +158,7 @@ public class EF_Interactables : MonoBehaviour
         }
     }
 
-    IEnumerator wait(GameObject item)
+    public IEnumerator wait(GameObject item)
     {
         Debug.Log("Start wait");
 
@@ -170,7 +173,7 @@ public class EF_Interactables : MonoBehaviour
     {
         Debug.Log("Unlocked");
         changeScene.ChangeScene(sceneName);
-        questionScript.points = 0; 
+       // questionScript.points = 0; 
     }
 
     void lockedDoor()
