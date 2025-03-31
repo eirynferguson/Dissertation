@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: 4188884522c36ff408c0a319eaaf5227
   - enabled: 1
+    path: Assets/Scenes/GameScreen.unity
+    guid: 547d1e709d5c47d40a47005b801238d2
+  - enabled: 1
     path: Assets/Scenes/InfoScreen.unity
     guid: 6e93073c68f1e8444a896c2341c9cde2
   - enabled: 1
@@ -16,7 +19,7 @@ EditorBuildSettings:
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/SceneTwo.unity
-    guid: 3e49dfae6cca68943ba8da061124abf6
+    guid: 337c82703777044408bec1a3b7f5c408
   - enabled: 1
     path: Assets/Scenes/EndScreen.unity
     guid: 6f9870752a0cc3249951fca355bb06fb

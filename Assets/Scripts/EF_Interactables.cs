@@ -83,7 +83,7 @@ public class EF_Interactables : MonoBehaviour
             }
             else if (itemName == "Door")
             { 
-                if (questionScript.points == 15)
+                if (questionScript.points >= 15)
                 {
                     openDoor(scene);
                 }
@@ -142,7 +142,7 @@ public class EF_Interactables : MonoBehaviour
 
     void loadNextLevel()
     {
-        if (questionScript.points == 15)
+        if (questionScript.points >= 15)
         {
             Debug.Log("Next Level");
             unlockedScreen.SetActive(true);
