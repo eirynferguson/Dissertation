@@ -42,12 +42,14 @@ public class EF_PlayerController : MonoBehaviour
 
         if (inputVector == new Vector2(0.0f, 0.0f))
         {
-            rbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            rbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ 
+                | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         }
         else
         {
             rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-            transform.position += (mainCamera.transform.forward * inputVector.y * objectSpeed * Time.fixedDeltaTime) + (mainCamera.transform.right * inputVector.x * objectSpeed * Time.fixedDeltaTime);
+            transform.position += (mainCamera.transform.forward * inputVector.y * objectSpeed * Time.fixedDeltaTime) 
+                + (mainCamera.transform.right * inputVector.x * objectSpeed * Time.fixedDeltaTime);
             transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
         }
     }

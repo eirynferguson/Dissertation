@@ -24,7 +24,8 @@ public class EF_FPCamera : MonoBehaviour
     void FixedUpdate()
     {
         //Moves Camera with Player
-        transform.position = new Vector3(target.transform.position.x, target.transform.position.y + 1.5f, target.transform.position.z);
+        transform.position = new Vector3(target.transform.position.x, target.transform.position.y 
+            + 1.5f, target.transform.position.z);
 
         //Mouse Input
         float inputX = Input.GetAxis("Mouse X")*mouseSensitivity;
